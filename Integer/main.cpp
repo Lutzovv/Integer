@@ -1,4 +1,5 @@
 #include <iostream> 
+#include <string>
 
 class Integer {
 public:
@@ -89,7 +90,7 @@ public:
                 return (units_ + other.units_) * -1;
             }
         }
-        return units_ > other.units_ ? other.units_ - units_ : units_ - other.units_;
+        return units_ > other.units_ ? other.units_ - units_ : (units_ - other.units_) * -1;
     }
 
 
@@ -154,10 +155,11 @@ public:
     void operator-=(Integer other) {
         if (sign_ == other.sign_) {
             if (sign_ == false && other.sign_ == false) {
-                units_ = units_ - other.units_;
+                units_ = units_ + other.units_;
             }
             else {
-                units_ = units_ - other.units_;
+                sign_ = false;
+                units_ = other.units_ - units_;
             }
         }
         else {
@@ -165,20 +167,31 @@ public:
                 units_ = units_ + other.units_;
             }
             else {
-                sign_ = other.sign_;
-                units_ = units_ + other.units_;
+                units_ = other.units_ + units_;
             }
         }
     }
 
 
     void operator*=(Integer other) {
-        units_ = units_ * other.getUnits();
+        if (sign_ == other.sign_) {
+            units_ = units_ * other.units_;
+        }
+        else {
+            sign_ = true;
+            units_ = units_ * other.units_;
+        }
     }
 
 
     void operator/=(Integer other) {
-        units_ = units_ / other.getUnits();
+        if (sign_ == other.sign_) {
+            units_ = units_ / other.units_;
+        }
+        else {
+            sign_ = true;
+            units_ = units_ / other.units_;
+        }
     }
 
 
@@ -260,18 +273,141 @@ public:
         }
     }
 
+
+    Integer operator++() {
+        if (sign_) {
+            if (units_ == -1 || units_ == 0) {
+                sign_ = false;
+                units_ -= 1;
+            }
+            else {
+                units_ += 1;
+            }
+        }
+        else {
+            units_ += 1;
+        }
+        return *this;
+    }
+
+
+    Integer operator++(int) {
+        if (sign_) {
+            if (units_ == -1 || units_ == 0) {
+                sign_ = false;
+                units_ -= 1;
+            }
+            else {
+                units_ += 1;
+            }
+        }
+        else {
+            units_ += 1;
+        }
+        return *this;
+    }
+
+
+    Integer operator--() {
+        if (!sign_) {
+            if (units_ == 1 || units_ == 0) {
+                sign_ = true;
+                units_ += 1;
+            }
+            else {
+                units_ += 1;
+            }
+        }
+        else {
+            units_ += 1;
+        }
+        return *this;
+    }
+
+
+    Integer operator--(int) {
+        if (!sign_) {
+            if (units_ == 1 || units_ == 0) {
+                sign_ = true;
+                units_ += 1;
+            }
+            else {
+                units_ += 1;
+            }
+        }
+        else {
+            units_ += 1;
+        }
+        return *this;
+    }
+
+
+    friend std::ostream& operator<<(std::ostream& out, const Integer& obj) {
+        char sign = '\0';
+        if (obj.sign_ == true) {
+            sign = '-';
+        }
+        return out << sign << obj.units_;
+    }
+
+
+    friend std::istream& operator>>(std::istream& in, Integer& obj) {
+        std::string str;
+        
+        in >> str;
+        if (std::stoi(str) < 0) {
+            obj.sign_ = true;
+        }
+        obj.units_ = ::abs(std::stoi(str));
+
+        return in;
+    }
+
 private:
     bool sign_;
     unsigned units_;
 };
 
+
+class Fraction {
+public:
+
+
+
+private:
+    Integer numerator_;
+    Integer denominator_;
+    bool sign_;
+
+
+};
+
+
 int main() {
-    int aa = 29, bb = 30;
-    Integer a = aa, b = bb, c;
+    std::cout << "\3\3\3\3\3\3\3\3\3\3\n";
+    int aa = -15, bb = 15;
+    Integer a = aa, b = bb, C;
+
+    std::cin >> C;
+    std::cout << C++;
     
-    a -= b;
+
+    //a--;
+    //std::cout << a.getUnits() << "\n";
+    //std::cout << a << "\n";
+
+    /*a /= b;
     std::cout << aa - bb << "\n";
-    std::cout << a.getSign() << " " << a.getUnits();
+    std::cout << a.getSign() << " " << a.getUnits();*/
+
+    /*if (a != b) {
+        std::cout << "==";
+    }
+    else {
+        std::cout << "-";
+    }*/
+
+
 
     return 0;
 }
