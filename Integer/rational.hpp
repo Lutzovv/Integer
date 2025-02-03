@@ -5,17 +5,19 @@
 
 class Rational {
 public:
-	Rational() = default;
+	Rational() : Rational(0, 0) {}
 	Rational(Integer numerator, Integer denominator) : numerator_(numerator), denominator_(denominator) {};
+	Rational(int numerator, int denominator) : numerator_(numerator), denominator_(denominator) {};
+	Rational(unsigned numerator, unsigned denominator) : numerator_(numerator), denominator_(denominator) {};
 
 	void setNumerator(Integer numerator);
 	void setDenominator(Integer denominator);
 
 
-	Integer getNumerator();
-	Integer getDenominator();
+	Integer getNumerator() const;
+	Integer getDenominator() const;
 
-
+	bool properFraction() const;
 
 
 private:

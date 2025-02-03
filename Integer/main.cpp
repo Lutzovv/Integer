@@ -1,4 +1,4 @@
-#include "integer.hpp"
+#include "rational.hpp"
 
 int main() {
     system("chcp 1251>NUL");
@@ -14,4 +14,8 @@ int main() {
     std::cout << c - c << "\n";
     std::cout << d - a << "\n";
     std::cout << b - d << "\n";
+
+
+    Rational al(b, a);
+    std::cout << al.properFraction();
 }

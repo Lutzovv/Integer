@@ -10,11 +10,18 @@ void Rational::setDenominator(Integer denominator) {
 }
 
 
-Integer Rational::getNumerator() {
+Integer Rational::getNumerator() const {
 	return numerator_;
 }
 
 
-Integer Rational::getDenominator() {
+Integer Rational::getDenominator() const {
 	return denominator_;
 }
+
+
+bool Rational::properFraction() const {
+	return !(numerator_ > denominator_);
+}
+
+
