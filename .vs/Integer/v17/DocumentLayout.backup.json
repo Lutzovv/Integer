@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\it\\cpp\\projects\\Integer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|solutionrelative:Integer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\integer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|solutionrelative:Integer\\integer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|solutionrelative:Integer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\integer.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Integer\\integer.hpp",
               "ToolTip": "E:\\it\\cpp\\projects\\Integer\\Integer\\integer.hpp",
               "RelativeToolTip": "Integer\\integer.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-29T13:51:31.084Z",
               "EditorCaption": ""
@@ -41,30 +41,30 @@
         },
         {
           "DockedWidth": 230,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "E:\\it\\cpp\\projects\\Integer\\Integer\\main.cpp",
               "RelativeDocumentMoniker": "Integer\\main.cpp",
               "ToolTip": "E:\\it\\cpp\\projects\\Integer\\Integer\\main.cpp",
               "RelativeToolTip": "Integer\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-29T13:59:59.286Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "integer.cpp",
               "DocumentMoniker": "E:\\it\\cpp\\projects\\Integer\\Integer\\integer.cpp",
               "RelativeDocumentMoniker": "Integer\\integer.cpp",
               "ToolTip": "E:\\it\\cpp\\projects\\Integer\\Integer\\integer.cpp",
               "RelativeToolTip": "Integer\\integer.cpp",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAowMAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAADwv28AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-20T13:51:35.933Z",
               "EditorCaption": ""

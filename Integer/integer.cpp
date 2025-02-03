@@ -97,8 +97,22 @@ Integer Integer::operator+(const Integer other) const {
 
 
 Integer Integer::operator-(const Integer other) const {
-    //return *this + Integer(!other.sign_, other.units_);
-    return *this + (other.units_ * -1);
+    if (sign_ == other.sign_) {
+        if (sign_) {
+            return (units_ - other.units_) * -1;
+        }
+        else {
+            return (units_ - other.units_);
+        }
+    }
+    else {
+        if (units_ > other.units_) {
+            return sign_ ? (units_ + other.units_) : (units_ + other.units_) * -1;
+        }
+        else {
+            return other.sign_ ? (other.units_ + units_) : (other.units_ + units_) * -1;
+        }
+    }
 }
 
 

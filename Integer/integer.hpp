@@ -8,6 +8,7 @@ class Integer {
 public:
     Integer() : Integer(false, 0u) {}
     Integer(bool sign, unsigned units) : sign_(sign), units_(units) {};
+    Integer(bool sign, int units) : sign_(sign), units_(units) {};
     Integer(int number);
 
     void setSign(bool sign);
