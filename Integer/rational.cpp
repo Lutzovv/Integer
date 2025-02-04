@@ -1,5 +1,9 @@
 #include "rational.hpp"
 
+Rational::Rational(std::string str) {
+
+}
+
 void Rational::setNumerator(Integer numerator) {
 	numerator_ = numerator;
 }
@@ -7,6 +11,16 @@ void Rational::setNumerator(Integer numerator) {
 
 void Rational::setDenominator(Integer denominator) {
 	denominator_ = denominator;
+}
+
+
+void Rational::setSignNumerator(bool sign) {
+	signNumerator_ = sign;
+}
+
+
+void Rational::setSignDenominator(bool sign) {
+	signDenominator_ = sign;
 }
 
 
@@ -25,3 +39,12 @@ bool Rational::properFraction() const {
 }
 
 
+bool Rational::getSignNumerator() const {
+	return signNumerator_;
+}
+
+
+bool Rational::getSignDenominator() const {
+	return signDenominator_;
+}
+ 
