@@ -56,7 +56,7 @@ bool Integer::isSimple() const {
 unsigned Integer::findNOD(Integer other) const {
     unsigned a = getUnits();
     unsigned b = other.getUnits();
-
+    
     while (b != 0) {
         unsigned temp = b;
         b = a % b;
@@ -145,15 +145,13 @@ Integer Integer::operator%(const Integer other) const {
         return 0;
     }
 
-    if (sign_ == false && other.sign_ == true) {
-        return (units_ % other.units_) * -1;
-    }
-    return units_ % other.units_;
+    return Integer(((other * (*this / other)) - *this) * -1);
 }
 
 
 void Integer::operator+=(Integer other) {
-    if (sign_ == other.sign_) {
+    *this = *this + other;
+    /*if (sign_ == other.sign_) {
         if (sign_ == false && other.sign_ == false) {
             units_ = units_ + other.units_;
         }
@@ -169,11 +167,31 @@ void Integer::operator+=(Integer other) {
             sign_ = other.sign_;
             units_ = other.units_ - units_;
         }
-    }
+    }*/
 }
 
 
 void Integer::operator-=(Integer other) {
+    *this = *this - other;
+    /*if (sign_ == other.sign_) {
+        if (sign_) {
+            units_ = units_ - other.units_;
+            sign_ = true;
+        }
+        else {
+            units_ =  (units_ - other.units_);
+        }
+    }
+    else {
+        if (sign_) {
+            units_ = (units_ + other.units_);
+        }
+        else {
+            sign_ = true;
+            units_ = units_ + other.units_;
+        }
+    }
+
     if (sign_ == other.sign_) {
         if (sign_ == false && other.sign_ == false) {
             units_ = units_ + other.units_;
@@ -190,7 +208,7 @@ void Integer::operator-=(Integer other) {
         else {
             units_ = other.units_ + units_;
         }
-    }
+    }*/
 }
 
 
@@ -297,7 +315,7 @@ bool Integer::operator<(Integer other) const {
 
 Integer Integer::operator++() {
     if (sign_) {
-        if (units_ == -1 || units_ == 0) {
+        if (units_ == 1 || units_ == 0) {
             sign_ = false;
             units_ -= 1;
         }
@@ -314,7 +332,18 @@ Integer Integer::operator++() {
 
 Integer Integer::operator++(int) {
     Integer copy{ *this };
-    ++(*this);
+    if (sign_) {
+        if (units_ == 1 || units_ == 0) {
+            sign_ = false;
+            units_ -= 1;
+        }
+        else {
+            units_ += 1;
+        }
+    }
+    else {
+        units_ += 1;
+    }
     return copy;
 }
 
@@ -338,7 +367,18 @@ Integer Integer::operator--() {
 
 Integer Integer::operator--(int) {
     Integer copy{ *this };
-    --(*this);
+    if (!sign_) {
+        if (units_ == 1 || units_ == 0) {
+            sign_ = true;
+            units_ += 1;
+        }
+        else {
+            units_ += 1;
+        }
+    }
+    else {
+        units_ += 1;
+    }
     return copy;
 }
 
