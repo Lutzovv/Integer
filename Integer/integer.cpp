@@ -151,86 +151,21 @@ Integer Integer::operator%(const Integer other) const {
 
 void Integer::operator+=(Integer other) {
     *this = *this + other;
-    /*if (sign_ == other.sign_) {
-        if (sign_ == false && other.sign_ == false) {
-            units_ = units_ + other.units_;
-        }
-        else {
-            units_ = units_ + other.units_;
-        }
-    }
-    else {
-        if (units_ > other.units_) {
-            units_ = units_ - other.units_;
-        }
-        else {
-            sign_ = other.sign_;
-            units_ = other.units_ - units_;
-        }
-    }*/
 }
 
 
 void Integer::operator-=(Integer other) {
     *this = *this - other;
-    /*if (sign_ == other.sign_) {
-        if (sign_) {
-            units_ = units_ - other.units_;
-            sign_ = true;
-        }
-        else {
-            units_ =  (units_ - other.units_);
-        }
-    }
-    else {
-        if (sign_) {
-            units_ = (units_ + other.units_);
-        }
-        else {
-            sign_ = true;
-            units_ = units_ + other.units_;
-        }
-    }
-
-    if (sign_ == other.sign_) {
-        if (sign_ == false && other.sign_ == false) {
-            units_ = units_ + other.units_;
-        }
-        else {
-            sign_ = false;
-            units_ = other.units_ - units_;
-        }
-    }
-    else {
-        if (units_ > other.units_) {
-            units_ = units_ + other.units_;
-        }
-        else {
-            units_ = other.units_ + units_;
-        }
-    }*/
 }
 
 
 void Integer::operator*=(Integer other) {
-    if (sign_ == other.sign_) {
-        units_ = units_ * other.units_;
-    }
-    else {
-        sign_ = true;
-        units_ = units_ * other.units_;
-    }
+    *this = *this * other;
 }
 
 
 void Integer::operator/=(Integer other) {
-    if (sign_ == other.sign_) {
-        units_ = units_ / other.units_;
-    }
-    else {
-        sign_ = true;
-        units_ = units_ / other.units_;
-    }
+    *this = *this / other;
 }
 
 

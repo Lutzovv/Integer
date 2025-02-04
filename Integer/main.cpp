@@ -3,7 +3,7 @@
 int main() {
     system("chcp 1251>NUL");
     
-    Integer a = 5;
+    /*Integer a = 5;
     Integer b = 3;
     Integer c = -2;
     Integer d = -4;
@@ -22,6 +22,11 @@ int main() {
     std::cout << c % c << "\n";
     std::cout << d % a << "\n";
     std::cout << b % d << "\n";
-    a += b;
-    std::cout << "\n\n\n" << a;
+    a *= c;
+    std::cout << "\n\n\n" << a << "\n";*/
+
+    Rational a = "8/36";
+    Rational b = "24/12";
+
+    std::cout << a;
 }

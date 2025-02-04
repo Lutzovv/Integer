@@ -2,14 +2,31 @@
 #define _RATIONAL_HPP_
 
 #include "integer.hpp"
+#include "cstdlib"
 
 class Rational {
 public:
-	Rational() : Rational(0, 0) {}
-	Rational(Integer numerator, Integer denominator) : numerator_(numerator), denominator_(denominator) {};
-	Rational(int numerator, int denominator) : numerator_(numerator), denominator_(denominator) {};
-	Rational(unsigned numerator, unsigned denominator) : numerator_(numerator), denominator_(denominator) {};
-	Rational(std::string str);
+	Rational() : Rational(0, 0, false, false) {}
+	Rational(Integer numerator, Integer denominator);
+	Rational(
+		int numerator, 
+		int denominator, 
+		bool signNumerator, 
+		bool signDenominator) : 
+		numerator_(numerator), 
+		denominator_(denominator), 
+		signNumerator_(signNumerator), 
+		signDenominator_(signDenominator) {};
+	Rational(unsigned numerator, 
+		unsigned denominator, 
+		bool signNumerator, 
+		bool signDenominator) : 
+		numerator_(numerator), 
+		denominator_(denominator), 
+		signNumerator_(signNumerator), 
+		signDenominator_(signDenominator) {};
+	Rational(const char* str);
+
 
 	void setNumerator(Integer numerator);
 	void setDenominator(Integer denominator);
@@ -23,7 +40,16 @@ public:
 	bool getSignDenominator() const;
 
 	bool properFraction() const;
+	bool isRationalPositive() const;
 
+
+	bool isRationalReciprocal(Rational other) const;
+	void reducingRational();
+
+
+
+
+	friend std::ostream& operator<<(std::ostream& out, const Rational& obj);
 
 private:
 	Integer numerator_;
