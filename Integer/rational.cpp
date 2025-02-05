@@ -81,6 +81,12 @@ bool Rational::isRationalReciprocal(Rational other) const {
 }
 
 
+Rational Rational::getReducingRational() const {
+	Integer nod = numerator_.findNOD(denominator_);
+	return Rational(numerator_ / nod, denominator_ / nod);
+}
+
+
 void Rational::reducingRational() {
 	Integer nod = numerator_.findNOD(denominator_);
 	numerator_ /= nod;
@@ -88,10 +94,28 @@ void Rational::reducingRational() {
 }
 
 
+void Rational::ractoinReplacement() {
+	Integer temp = denominator_;
+	denominator_ = numerator_;
+	numerator_ = temp;	
+}
 
 
+Rational Rational::operator+(const Rational other) const {
+	/*
+	создаём переменную резалт
+	считаем НОК
 
+	*/
 
+	Rational result, num1 = *this, num2 = other;
+	Integer temp, nok = denominator_.findNOK(other.denominator_);
+	num1.numerator_ = (nok / num1.denominator_) * num1.numerator_;
+	num2.numerator_ = (nok / num2.denominator_) * num2.numerator_;
+	temp = num1.numerator_ + num2.numerator_;
+
+	return Rational(temp, nok);
+}
 
 
 std::ostream& operator<<(std::ostream& out, const Rational& obj) {

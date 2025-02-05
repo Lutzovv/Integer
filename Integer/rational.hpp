@@ -44,9 +44,12 @@ public:
 
 
 	bool isRationalReciprocal(Rational other) const;
+	Rational getReducingRational() const;
 	void reducingRational();
+	void ractoinReplacement();
 
 
+	Rational operator+(const Rational other) const;
 
 
 	friend std::ostream& operator<<(std::ostream& out, const Rational& obj);

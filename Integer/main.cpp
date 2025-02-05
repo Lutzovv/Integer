@@ -25,8 +25,13 @@ int main() {
     a *= c;
     std::cout << "\n\n\n" << a << "\n";*/
 
-    Rational a = "8/36";
-    Rational b = "24/12";
+    Rational a = "3/15";
+    Rational b = "4/18";
 
-    std::cout << a;
+    Integer aa = 15, bb = 18;
+
+
+    std::cout << a + b;
+
+    //std::cout << a << "\n";
 }
