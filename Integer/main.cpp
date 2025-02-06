@@ -28,8 +28,9 @@ int main() {
     Rational a = "3/15";
     Rational b = "4/18";
 
-    Integer aa = 15, bb = 18;
+    Integer aa = -15, bb = -18;
 
+    Rational c = Rational(aa, bb);
 
     std::cout << a + b;
 

@@ -6,41 +6,35 @@
 
 class Rational {
 public:
-	Rational() : Rational(0, 0, false, false) {}
+	Rational() : Rational(0, 0, false) {}
 	Rational(Integer numerator, Integer denominator);
 	Rational(
 		int numerator, 
 		int denominator, 
-		bool signNumerator, 
-		bool signDenominator) : 
+		bool sign) : 
 		numerator_(numerator), 
 		denominator_(denominator), 
-		signNumerator_(signNumerator), 
-		signDenominator_(signDenominator) {};
-	Rational(unsigned numerator, 
+		sign_(sign) {};
+	Rational(
+		unsigned numerator, 
 		unsigned denominator, 
-		bool signNumerator, 
-		bool signDenominator) : 
+		bool sign) : 
 		numerator_(numerator), 
 		denominator_(denominator), 
-		signNumerator_(signNumerator), 
-		signDenominator_(signDenominator) {};
+		sign_(sign) {};
 	Rational(const char* str);
 
 
 	void setNumerator(Integer numerator);
 	void setDenominator(Integer denominator);
-	void setSignNumerator(bool sign);
-	void setSignDenominator(bool sign);
+	void setSign(bool sign);
 
 
 	Integer getNumerator() const;
 	Integer getDenominator() const;
-	bool getSignNumerator() const;
-	bool getSignDenominator() const;
+	bool getSign() const;
 
 	bool properFraction() const;
-	bool isRationalPositive() const;
 
 
 	bool isRationalReciprocal(Rational other) const;
@@ -57,9 +51,7 @@ public:
 private:
 	Integer numerator_;
 	Integer denominator_;
-	bool signNumerator_;
-	bool signDenominator_;
-
+	bool sign_;
 };
 
 #endif // _RATIONAL_HPP_

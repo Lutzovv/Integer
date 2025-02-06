@@ -1,28 +1,38 @@
 #include "rational.hpp"
 
 Rational::Rational(const char* str) {
-	/*int symbol = str.find("/");
-	numerator_ = std::stoi(str.substr(0, symbol));
-	denominator_ = std::stoi(str.substr(symbol + 1));
-	signNumerator_ = numerator_.getSign();
-	signDenominator_ = denominator_.getSign();*/
-
 	const char* symbol = std::strchr(str, '/');
 	if (symbol != nullptr) {
 		numerator_ = std::atoi(std::string(str, symbol - str).c_str());
 		denominator_ = std::atoi(symbol + 1);
-		signNumerator_ = numerator_.getSign();
-		signDenominator_ = denominator_.getSign();
+		if (numerator_.getSign() == denominator_.getSign()) {
+			sign_ = false;
+			numerator_.setSign(false);
+			denominator_.setSign(false);
+		}
+		else {
+			sign_ = true;
+			numerator_.setSign(false);
+			denominator_.setSign(false);
+		}
 	}
 }
 
 
 Rational::Rational(Integer numerator, Integer denominator) {
-	numerator_ = numerator.getUnits();
-	signNumerator_ = numerator.getSign();
+	numerator_ = numerator;
+	denominator_ = denominator;
 
-	denominator_ = denominator_.getUnits();
-	signDenominator_ = denominator_.getSign();
+	if (numerator.getSign() == denominator.getSign()) {
+		sign_ = false;
+		numerator_.setSign(false);
+		denominator_.setSign(false);
+	}
+	else {
+		sign_ = true;
+		numerator_.setSign(false);
+		denominator_.setSign(false);
+	}
 }
 
 
@@ -36,13 +46,8 @@ void Rational::setDenominator(Integer denominator) {
 }
 
 
-void Rational::setSignNumerator(bool sign) {
-	signNumerator_ = sign;
-}
-
-
-void Rational::setSignDenominator(bool sign) {
-	signDenominator_ = sign;
+void Rational::setSign(bool sign) {
+	sign_ = sign;
 }
 
 
@@ -61,18 +66,8 @@ bool Rational::properFraction() const {
 }
 
 
-bool Rational::getSignNumerator() const {
-	return signNumerator_;
-}
-
-
-bool Rational::getSignDenominator() const {
-	return signDenominator_;
-}
- 
-
-bool Rational::isRationalPositive() const {
-	return signNumerator_ == signDenominator_;
+bool Rational::getSign() const {
+	return sign_;
 }
 
 
@@ -102,11 +97,6 @@ void Rational::ractoinReplacement() {
 
 
 Rational Rational::operator+(const Rational other) const {
-	/*
-	создаём переменную резалт
-	считаем НОК
-
-	*/
 
 	Rational result, num1 = *this, num2 = other;
 	Integer temp, nok = denominator_.findNOK(other.denominator_);
@@ -119,5 +109,8 @@ Rational Rational::operator+(const Rational other) const {
 
 
 std::ostream& operator<<(std::ostream& out, const Rational& obj) {
+	if (obj.sign_ == true) {
+		return out << "-(" << obj.numerator_ << "/" << obj.denominator_ << ")";
+	}
 	return out << obj.numerator_ << "/" << obj.denominator_;
 }

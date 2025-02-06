@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "E:\\it\\cpp\\projects\\Integer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\rational.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|solutionrelative:Integer\\rational.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|solutionrelative:Integer\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\rational.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|solutionrelative:Integer\\rational.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\integer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|solutionrelative:Integer\\integer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\integer.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|solutionrelative:Integer\\integer.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\rational.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|solutionrelative:Integer\\rational.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|E:\\it\\cpp\\projects\\Integer\\Integer\\integer.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E2508467-B2A6-489E-92A0-A241F3BD1984}|Integer\\Integer.vcxproj|solutionrelative:Integer\\integer.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,28 +34,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "rational.cpp",
               "DocumentMoniker": "E:\\it\\cpp\\projects\\Integer\\Integer\\rational.cpp",
               "RelativeDocumentMoniker": "Integer\\rational.cpp",
               "ToolTip": "E:\\it\\cpp\\projects\\Integer\\Integer\\rational.cpp",
               "RelativeToolTip": "Integer\\rational.cpp",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAG0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-03T17:16:04.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "rational.hpp",
-              "DocumentMoniker": "E:\\it\\cpp\\projects\\Integer\\Integer\\rational.hpp",
-              "RelativeDocumentMoniker": "Integer\\rational.hpp",
-              "ToolTip": "E:\\it\\cpp\\projects\\Integer\\Integer\\rational.hpp",
-              "RelativeToolTip": "Integer\\rational.hpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADMAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-03T17:15:15.586Z",
               "EditorCaption": ""
             }
           ]
@@ -66,13 +53,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "E:\\it\\cpp\\projects\\Integer\\Integer\\main.cpp",
               "RelativeDocumentMoniker": "Integer\\main.cpp",
               "ToolTip": "E:\\it\\cpp\\projects\\Integer\\Integer\\main.cpp",
               "RelativeToolTip": "Integer\\main.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAmwCEAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwB4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-29T13:59:59.286Z",
               "EditorCaption": ""
@@ -85,14 +72,14 @@
               "RelativeDocumentMoniker": "Integer\\integer.cpp",
               "ToolTip": "E:\\it\\cpp\\projects\\Integer\\Integer\\integer.cpp",
               "RelativeToolTip": "Integer\\integer.cpp",
-              "ViewState": "AgIAADIAAAAAAAAAAAAhwDYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADcBAAAAAAAAAAAhwFMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-20T13:51:35.933Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "integer.hpp",
               "DocumentMoniker": "E:\\it\\cpp\\projects\\Integer\\Integer\\integer.hpp",
               "RelativeDocumentMoniker": "Integer\\integer.hpp",
@@ -100,7 +87,19 @@
               "RelativeToolTip": "Integer\\integer.hpp",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-29T13:51:31.084Z",
+              "WhenOpened": "2025-01-29T13:51:31.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "rational.hpp",
+              "DocumentMoniker": "E:\\it\\cpp\\projects\\Integer\\Integer\\rational.hpp",
+              "RelativeDocumentMoniker": "Integer\\rational.hpp",
+              "ToolTip": "E:\\it\\cpp\\projects\\Integer\\Integer\\rational.hpp",
+              "RelativeToolTip": "Integer\\rational.hpp",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-03T17:15:15.586Z",
               "EditorCaption": ""
             }
           ]
