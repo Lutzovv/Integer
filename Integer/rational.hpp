@@ -40,12 +40,26 @@ public:
 	bool isRationalReciprocal(Rational other) const;
 	Rational getReducingRational() const;
 	void reducingRational();
-	void ractoinReplacement();
+	Rational ractoinReplacement() const;
 
 
 	Rational operator+(const Rational other) const;
+	Rational operator-(const Rational other) const;
+	Rational operator*(const Rational other) const;
+	Rational operator/(const Rational other) const;
+	void operator+=(const Rational other);
+	void operator-=(const Rational other);
+	void operator*=(const Rational other);
+	void operator/=(const Rational other);
+	bool operator==(const Rational other) const;
+	bool operator!=(const Rational other) const;
+	bool operator>(const Rational other) const;
+	bool operator<(const Rational other) const;
+	bool operator>=(const Rational other) const;
+	bool operator<=(const Rational other) const;
 
 
+	friend std::istream& operator>>(std::istream& in, Rational& obj);
 	friend std::ostream& operator<<(std::ostream& out, const Rational& obj);
 
 private:

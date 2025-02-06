@@ -41,10 +41,10 @@ public:
     void operator/=(Integer other);
     bool operator==(Integer other) const;
     bool operator!=(Integer other) const;
-    bool operator>=(Integer other) const;
-    bool operator<=(Integer other) const;
     bool operator>(Integer other) const;
     bool operator<(Integer other) const;
+    bool operator>=(Integer other) const;
+    bool operator<=(Integer other) const;
     Integer operator++();
     Integer operator++(int);
     Integer operator--();

@@ -3,8 +3,8 @@
 Rational::Rational(const char* str) {
 	const char* symbol = std::strchr(str, '/');
 	if (symbol != nullptr) {
-		numerator_ = std::atoi(std::string(str, symbol - str).c_str());
-		denominator_ = std::atoi(symbol + 1);
+		numerator_ = std::stoi(std::string(str, symbol - str).c_str());
+		denominator_ = std::stoi(symbol + 1);
 		if (numerator_.getSign() == denominator_.getSign()) {
 			sign_ = false;
 			numerator_.setSign(false);
@@ -89,22 +89,195 @@ void Rational::reducingRational() {
 }
 
 
-void Rational::ractoinReplacement() {
-	Integer temp = denominator_;
-	denominator_ = numerator_;
-	numerator_ = temp;	
+Rational Rational::ractoinReplacement() const {
+	Rational temp;
+	temp.numerator_ = this->denominator_;
+	temp.denominator_ = this->numerator_;
+	return temp;
 }
 
 
 Rational Rational::operator+(const Rational other) const {
+	Rational num1 = *this;
+	Rational num2 = other;
 
-	Rational result, num1 = *this, num2 = other;
-	Integer temp, nok = denominator_.findNOK(other.denominator_);
+	Integer nok = denominator_.findNOK(num2.denominator_);
+
 	num1.numerator_ = (nok / num1.denominator_) * num1.numerator_;
 	num2.numerator_ = (nok / num2.denominator_) * num2.numerator_;
-	temp = num1.numerator_ + num2.numerator_;
+
+	Integer temp = num1.numerator_ + (num2.sign_ ? num2.numerator_ * -1 : num2.numerator_);
 
 	return Rational(temp, nok);
+}
+
+
+Rational Rational::operator-(const Rational other) const {
+	Rational num1 = *this;
+	Rational num2 = other;
+
+	Integer nok = denominator_.findNOK(num2.denominator_);
+
+	num1.numerator_ = (nok / num1.denominator_) * num1.numerator_;
+	num2.numerator_ = (nok / num2.denominator_) * num2.numerator_;
+
+	if (num1.getSign() == true) {
+		num1.sign_ = !sign_;
+	}
+	else if (num2.getSign() == true) {
+		num2.sign_ = !sign_;
+	}
+
+	Integer temp = num1.numerator_ - (num2.sign_ ? num2.numerator_ * -1 : num2.numerator_);
+
+	return Rational(temp, nok);
+}
+
+
+Rational Rational::operator*(const Rational other) const {
+	Rational result;
+
+	if (this->sign_ != other.sign_) {
+		result.sign_ = true;
+	}
+	result.numerator_ = this->numerator_ * other.numerator_;
+	result.denominator_ = this->denominator_ * other.denominator_;
+
+	return result;
+}
+
+
+Rational Rational::operator/(const Rational other) const {
+	Rational result = *this * other.ractoinReplacement();
+	if (this->sign_ != other.sign_) {
+		result.sign_ = true;
+	}
+	return result;
+}
+
+
+void Rational::operator+=(const Rational other) {
+	*this = *this + other;
+}
+
+
+void Rational::operator-=(const Rational other) {
+	*this = *this - other;
+}
+
+
+void Rational::operator*=(const Rational other) {
+	*this = *this * other;
+}
+
+
+void Rational::operator/=(const Rational other) {
+	*this = *this / other;
+}
+
+
+bool Rational::operator==(const Rational other) const {
+	if (this->sign_ != other.sign_) {
+		if (this->sign_ == true) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	Rational num1 = *this;
+	Rational num2 = other;
+
+	Integer nok = denominator_.findNOK(num2.denominator_);
+
+	num1.numerator_ = (nok / num1.denominator_) * num1.numerator_;
+	num2.numerator_ = (nok / num2.denominator_) * num2.numerator_;
+
+	return num1.numerator_ == num2.numerator_;
+}
+
+
+bool Rational::operator!=(const Rational other) const {
+	return !(*this == other);
+}
+
+
+bool Rational::operator>(const Rational other) const {
+	if (this->sign_ != other.sign_) {
+		if (this->sign_ == true) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	Rational num1 = *this;
+	Rational num2 = other;
+
+	Integer nok = denominator_.findNOK(num2.denominator_);
+
+	num1.numerator_ = (nok / num1.denominator_) * num1.numerator_;
+	num2.numerator_ = (nok / num2.denominator_) * num2.numerator_;
+
+	return num1.numerator_ > num2.numerator_;
+}
+
+
+bool Rational::operator<(const Rational other) const {
+	return !(*this > other);
+}
+
+
+bool Rational::operator>=(const Rational other) const {
+	if (this->sign_ != other.sign_) {
+		if (this->sign_ == true) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+
+	Rational num1 = *this;
+	Rational num2 = other;
+
+	Integer nok = denominator_.findNOK(num2.denominator_);
+
+	num1.numerator_ = (nok / num1.denominator_) * num1.numerator_;
+	num2.numerator_ = (nok / num2.denominator_) * num2.numerator_;
+
+	return num1.numerator_ >= num2.numerator_;
+}
+
+
+bool Rational::operator<=(const Rational other) const {
+	if (this->sign_ != other.sign_) {
+		if (this->sign_ == true) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	Rational num1 = *this;
+	Rational num2 = other;
+
+	Integer nok = denominator_.findNOK(num2.denominator_);
+
+	num1.numerator_ = (nok / num1.denominator_) * num1.numerator_;
+	num2.numerator_ = (nok / num2.denominator_) * num2.numerator_;
+
+	return num1.numerator_ <= num2.numerator_;
+}
+
+
+std::istream& operator>>(std::istream& in, Rational& obj) {
+	std::string str;
+	in >> str;
+	obj = Rational(str.c_str());
+	return in;
 }
 
 
