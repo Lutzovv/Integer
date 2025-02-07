@@ -57,6 +57,10 @@ public:
 	bool operator<(const Rational other) const;
 	bool operator>=(const Rational other) const;
 	bool operator<=(const Rational other) const;
+	Rational operator++();
+	Rational operator++(int);
+	Rational operator--();
+	Rational operator--(int);
 
 
 	friend std::istream& operator>>(std::istream& in, Rational& obj);
