@@ -273,6 +273,32 @@ bool Rational::operator<=(const Rational other) const {
 }
 
 
+Rational Rational::operator++() {
+	this->numerator_++;
+	return *this;
+}
+
+
+Rational Rational::operator++(int) {
+	Rational temp = *this;
+	this->numerator_++;
+	return temp;
+}
+
+
+Rational Rational::operator--() {
+	this->numerator_--;
+	return *this;
+}
+
+
+Rational Rational::operator--(int) {
+	Rational temp = *this;
+	this->numerator_--;
+	return temp;
+}
+
+
 std::istream& operator>>(std::istream& in, Rational& obj) {
 	std::string str;
 	in >> str;
