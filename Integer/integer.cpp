@@ -12,6 +12,11 @@ Integer::Integer(int number) {
 }
 
 
+Integer::Integer(std::string str) {
+    Integer(std::stoi(str));
+}
+
+
 void Integer::setSign(bool sign) {
     this->sign_ = sign;
 }
@@ -169,7 +174,7 @@ void Integer::operator/=(Integer other) {
 }
 
 
-bool Integer::operator==(Integer other) const {
+bool Integer::operator==(const Integer other) const {
     if (!(sign_ && other.sign_)) {
         return units_ == other.units_;
     }
@@ -182,7 +187,7 @@ bool Integer::operator==(Integer other) const {
 }
 
 
-bool Integer::operator!=(Integer other) const {
+bool Integer::operator!=(const Integer other) const {
     if (!(sign_ && other.sign_)) {
         return !(units_ == other.units_);
     }
@@ -195,7 +200,7 @@ bool Integer::operator!=(Integer other) const {
 }
 
 
-bool Integer::operator>=(Integer other) const {
+bool Integer::operator>=(const Integer other) const {
     if (!(sign_ && other.sign_)) {
         return units_ >= other.units_;
     }
@@ -208,7 +213,7 @@ bool Integer::operator>=(Integer other) const {
 }
 
 
-bool Integer::operator<=(Integer other) const {
+bool Integer::operator<=(const Integer other) const {
     if (!(sign_ && other.sign_)) {
         return units_ <= other.units_;
     }
@@ -221,7 +226,7 @@ bool Integer::operator<=(Integer other) const {
 }
 
 
-bool Integer::operator>(Integer other) const {
+bool Integer::operator>(const Integer other) const {
     if (!(sign_ && other.sign_)) {
         return units_ > other.units_;
     }
@@ -235,7 +240,7 @@ bool Integer::operator>(Integer other) const {
 }
 
 
-bool Integer::operator<(Integer other) const {
+bool Integer::operator<(const Integer other) const {
     if (!(sign_ && other.sign_)) {
         return !(units_ < other.units_);
     }
