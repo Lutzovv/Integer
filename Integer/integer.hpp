@@ -10,6 +10,7 @@ public:
     Integer(bool sign, unsigned units) : sign_(sign), units_(units) {};
     Integer(bool sign, int units) : sign_(sign), units_(units) {};
     Integer(int number);
+    Integer(std::string str);
 
     void setSign(bool sign);
     void setUnits(unsigned units);
@@ -39,12 +40,12 @@ public:
     void operator-=(Integer other);
     void operator*=(Integer other);
     void operator/=(Integer other);
-    bool operator==(Integer other) const;
-    bool operator!=(Integer other) const;
-    bool operator>(Integer other) const;
-    bool operator<(Integer other) const;
-    bool operator>=(Integer other) const;
-    bool operator<=(Integer other) const;
+    bool operator==(const Integer other) const;
+    bool operator!=(const Integer other) const;
+    bool operator>(const Integer other) const;
+    bool operator<(const Integer other) const;
+    bool operator>=(const Integer other) const;
+    bool operator<=(const Integer other) const;
     Integer operator++();
     Integer operator++(int);
     Integer operator--();
